@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Vulnhub Fartknocker CTF Write Up</title>
+  <meta property="og:title" content="Vulnhub Fartknocker CTF Write Up" />
+  <meta name="twitter:title" content="Vulnhub Fartknocker CTF Write Up" />
+  <meta name="description" content="Step by Step walkthrough of VulnHubs Fartknocker CTF challenge by tophatsec">
+  <meta property="og:description" content="Step by Step walkthrough of VulnHubs Fartknocker CTF challenge by tophatsec">
+  <meta name="twitter:description" content="Step by Step walkthrough of VulnHubs Fartknocker CTF challenge by tophatsec">
+  <meta name="author" content="Henry Minnick"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Hacker Notes - A Pen Testers Notebook" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/" />
+  <link rel="alternate" href="https://thehackernotes.com/index.xml" type="application/rss+xml" title="The Hacker Notes - A Pen Testers Notebook">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://thehackernotes.com/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://thehackernotes.com/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://thehackernotes.com/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://thehackernotes.com/">The Hacker Notes - A Pen Testers Notebook</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Disclaimer" href="/disclaimer/">Disclaimer</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Privacy Policy" href="/privacy-policy/">Privacy Policy</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about-us/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Vulnhub Fartknocker CTF Write Up</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on Wed, Sep 30, 2015
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>This post is a solution to the CTF  Challenge which can be found here.</p>
+
+<p>When we load the downloaded life onto Virtual Box , we find a login screen.</p>
+
+<p>A nmap scan shows only port 80 is open.The scan result indicates that either the whole level is web app based or there is PORT KNOCKING involved. If you are not familiar with port knocking , i can give you a analogy . Suppose there are three guys who share a hostel room and are working on something secret and do not want others to know about it. They decide that whenever anyone of them knock the door they do it two knocks , three knocks and one knock (knockknock knockknockknock knock ) so that those present inside the room can understand that its their roommate and can open the door asap without worrying.</p>
+
+<p>Same way to prevent people from attacking on open ports , port knocking was introduced which allowed people to set a certain sequence of ports which when knocked(tried to connected to) in a certain sequence will open some predefined port )</p>
+
+<p>We point the Web Browsers URL bar to the ip and get a page which has a link to a pcap file. Opening the file with wireshark and analysing reveals the sequence in which the ports must be knocked .</p>
+
+<pre><code>    7000
+    8000
+    9000
+    7000
+    8000
+    9000
+    8888
+</code></pre>
+
+<p>After knocking the ports , nmap scan reveals that port 8888 is open and it points to</p>
+
+<pre><code>    /burgerworld/
+</code></pre>
+
+<p>When opened in browser , it gives the link to a second pcap file.
+When we analyse the cap file and follow the tcp stream we get a strange image and 4 words written in a language not known to me.So i copy those words and paste it on google translate which translate to 1 3 3 7 .</p>
+
+<p>This is our new clue . We continue the tradition of port knocking and knock the ports in order</p>
+
+<pre><code>    1
+    3
+    3
+    7
+    1337
+</code></pre>
+
+<pre><code>Another Nmap scan points us to  /iamcornholio/
+</code></pre>
+
+<p>We get a string which looks like base64.
+When decoded gives us</p>
+
+<pre><code>
+    Open up SSH: 8888 9999 7777 6666
+</code></pre>
+
+<p>We again use nectat to knock ports</p>
+
+<pre><code>    8888
+    9999
+    7777
+    6666
+</code></pre>
+
+<p>and a nmap scan reveals that port 22 (SSH) port is open.</p>
+
+<p>When the command  ssh 192.168.56.101 is run it spits out :</p>
+
+<p>The login credentials of username butthead.</p>
+
+<p>When we try the credentials butthead and nachosrule we get the following output:</p>
+
+<pre><code>    ############################################
+    # CONGRATS! YOU HAVE OPENED THE SSH SERVER #
+    # USERNAME: butthead                       #
+    # PASSWORD: nachosrule                     #
+    ############################################
+</code></pre>
+
+<p>And we get logged out instantly .</p>
+
+<p>We use sftp using filezilla to browse and view the files.</p>
+
+<p>We find there is a file named nachos , when we open the file we get the following text:</p>
+
+<pre><code>    cat nachos
+    Great job on getting this far.
+
+    Can you login as beavis or root ?
+</code></pre>
+
+<p>Now we need a privilege escalation to get to the next clue.I remembered a post i read about private escalation on several versions of ubuntu. I google again and i get a exploit on exploit db link: <a href="https://www.exploit-db.com/exploits/37292/">https://www.exploit-db.com/exploits/37292/</a></p>
+
+<p>I use filezilla again to transfer the file.</p>
+
+<p>Then i use the ssh command and add the command gcc 37927.c at the end to compile the c program on the machine.</p>
+
+<p>Then i connect via ssh again and use /bin/bash .</p>
+
+<p>Then i run the compiled program using</p>
+
+<pre><code>    ./a.out (default name for compiled c file if no name is specified for output file)
+</code></pre>
+
+<p>We get the following on our screen :</p>
+
+<pre><code>    ./a.out
+
+    spawning threads
+
+    mount #1
+
+    mount #2
+
+    child threads done
+
+    /etc/ld.so.preload created
+
+    creating shared library
+
+    sh: 0: can’t access tty; job control turned off
+</code></pre>
+
+<p>ROOT</p>
+
+<p>Now we can run the command whoami to see the username .</p>
+
+<p>It says ROOT, hooray we goot root.</p>
+
+<p>Now we list the content of the root dir using :</p>
+
+<pre><code>ls /root/ and we see there is a file named SECRETZ.
+</code></pre>
+
+<p>We do a cat and see the Success Message:</p>
+
+<pre><code>cat /root/SECRETZ
+
+    You have done a great job, if you can see this, please shoot me an email
+
+    and let me know that you have beat this box!
+
+    SECRET = “LIVE LONG AND PROSPER, REST IN PEACE MR. SPOCK”
+
+</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://thehackernotes.com/solution-to-ctf-level-5-infosecinstitutepractical-web-hacking/" data-toggle="tooltip" data-placement="top" title="A Step-by-Step Walkthrough Solution to CTF LEVEL 5 INFOSECINSTITUTE (Practical Web HACKING)">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://thehackernotes.com/solution-to-ctf-level-9-infosecinstitutepractical-web-hacking/" data-toggle="tooltip" data-placement="top" title="A Step-by-Step Walkthrough Solution to CTF LEVEL 9 INFOSECINSTITUTE (Practical Web HACKING)">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Henry Minnick
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://thehackernotes.com/">The Hacker Notes - A Pen Testers Notebook</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://thehackernotes.com/js/main.js"></script>
+<script src="https://thehackernotes.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

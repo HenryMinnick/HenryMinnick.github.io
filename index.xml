@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Hacker Notes - A Pen Testers Notebook</title>
+    <link>https://thehackernotes.com/</link>
+    <description>Recent content on The Hacker Notes - A Pen Testers Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>thehackernotes.com</copyright>
+    <lastBuildDate>Thu, 06 Jul 2017 08:48:12 -0700</lastBuildDate>
+    
+	<atom:link href="https://thehackernotes.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Disclaimer</title>
+      <link>https://thehackernotes.com/disclaimer/</link>
+      <pubDate>Thu, 06 Jul 2017 08:48:12 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/disclaimer/</guid>
+      <description>Disclaimer THE HACKER NOTES doesn’t promote ‘unethical hacking’ in any way.All the contents and tutorials are just to make people aware of the new ways of different kinds of hacking so that they can learn how to protect them , because i believe that unless one learns how to hack , they cannot learn how to prevent getting hacked.
+All contents is for educational purpose only, and THE HACKER NOTES doesn’t take any responsibility for any misuse of the information provided to the users.</description>
+    </item>
+    
+    <item>
+      <title>contact us</title>
+      <link>https://thehackernotes.com/contact-us/</link>
+      <pubDate>Thu, 06 Jul 2017 08:48:05 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/contact-us/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About Us</title>
+      <link>https://thehackernotes.com/about-us/</link>
+      <pubDate>Thu, 06 Jul 2017 08:47:58 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/about-us/</guid>
+      <description>About Us Its more of an about me page than a about us page. I am a 27 year old penetration tester who studying Computer Science Engineering and has keen interest in the infosec world. I spent a lot of time searching for the right path in the field of information security. In my youth I spent time on hacking forums, reading tutorials, watching video tutorials, downloading ‘hacking tools’,using metasploit against VulnHub virtual machines and other legal challenges.</description>
+    </item>
+    
+    <item>
+      <title>Privacy policy</title>
+      <link>https://thehackernotes.com/privacy-policy/</link>
+      <pubDate>Thu, 06 Jul 2017 08:45:59 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/privacy-policy/</guid>
+      <description>Privacy Policy Thank you for visiting our web site. The following privacy policy tells you how we use personal information collected at this site. Please read this privacy policy before using the site or submitting any personal information. By using the site, you are accepting the practices described in this privacy policy. These practices may be changed, but any changes will be posted and changes will only apply to activities and information on a going forward, not retroactive basis.</description>
+    </item>
+    
+    <item>
+      <title>A Step-by-Step Walkthrough Solution to CTF LEVEL 9 INFOSECINSTITUTE (Practical Web HACKING)</title>
+      <link>https://thehackernotes.com/solution-to-ctf-level-9-infosecinstitutepractical-web-hacking/</link>
+      <pubDate>Wed, 30 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/solution-to-ctf-level-9-infosecinstitutepractical-web-hacking/</guid>
+      <description>The level says we need to login as Mary Jane and we check cookies we get a cryptic looking string replace %3D with =, if you are using firebug cookie explorer it will do it automatically for you , decode the string as base 64 you will get the output.
+So now all you need to do is encode the string MARY JANE as base 64 and replace the cookie and refresh the page and you get</description>
+    </item>
+    
+    <item>
+      <title>Vulnhub Fartknocker CTF Write Up</title>
+      <link>https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/</link>
+      <pubDate>Wed, 30 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/</guid>
+      <description>This post is a solution to the CTF Challenge which can be found here.
+When we load the downloaded life onto Virtual Box , we find a login screen.
+A nmap scan shows only port 80 is open.The scan result indicates that either the whole level is web app based or there is PORT KNOCKING involved. If you are not familiar with port knocking , i can give you a analogy .</description>
+    </item>
+    
+    <item>
+      <title>A Step-by-Step Walkthrough Solution to CTF LEVEL 5 INFOSECINSTITUTE (Practical Web HACKING)</title>
+      <link>https://thehackernotes.com/solution-to-ctf-level-5-infosecinstitutepractical-web-hacking/</link>
+      <pubDate>Thu, 24 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/solution-to-ctf-level-5-infosecinstitutepractical-web-hacking/</guid>
+      <description>The Level can be accessed here.
+The Question says :It seems you have encountered a page which requires users to login before viewing. Do some magic without having to log in.
+The hint says you need to play with the headers , HTTP_REFERER
+On analysing the source code we see that the login button is disabled
+We remove the code disabled using the inspect tool in firefox and go to the login page which is available at the page login.</description>
+    </item>
+    
+  </channel>
+</rss>

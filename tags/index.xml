@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on The Hacker Notes - A Pen Testers Notebook</title>
+    <link>https://thehackernotes.com/tags/</link>
+    <description>Recent content in Tags on The Hacker Notes - A Pen Testers Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>thehackernotes.com</copyright>
+    <lastBuildDate>Wed, 30 Sep 2015 09:08:09 -0700</lastBuildDate>
+    
+	<atom:link href="https://thehackernotes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pen Testing</title>
+      <link>https://thehackernotes.com/tags/pen-testing/</link>
+      <pubDate>Wed, 30 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/tags/pen-testing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

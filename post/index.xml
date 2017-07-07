@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on The Hacker Notes - A Pen Testers Notebook</title>
+    <link>https://thehackernotes.com/post/</link>
+    <description>Recent content in Posts on The Hacker Notes - A Pen Testers Notebook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>thehackernotes.com</copyright>
+    <lastBuildDate>Wed, 30 Sep 2015 09:08:09 -0700</lastBuildDate>
+    
+	<atom:link href="https://thehackernotes.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Step-by-Step Walkthrough Solution to CTF LEVEL 9 INFOSECINSTITUTE (Practical Web HACKING)</title>
+      <link>https://thehackernotes.com/solution-to-ctf-level-9-infosecinstitutepractical-web-hacking/</link>
+      <pubDate>Wed, 30 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/solution-to-ctf-level-9-infosecinstitutepractical-web-hacking/</guid>
+      <description>The level says we need to login as Mary Jane and we check cookies we get a cryptic looking string replace %3D with =, if you are using firebug cookie explorer it will do it automatically for you , decode the string as base 64 you will get the output.
+So now all you need to do is encode the string MARY JANE as base 64 and replace the cookie and refresh the page and you get</description>
+    </item>
+    
+    <item>
+      <title>Vulnhub Fartknocker CTF Write Up</title>
+      <link>https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/</link>
+      <pubDate>Wed, 30 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/</guid>
+      <description>This post is a solution to the CTF Challenge which can be found here.
+When we load the downloaded life onto Virtual Box , we find a login screen.
+A nmap scan shows only port 80 is open.The scan result indicates that either the whole level is web app based or there is PORT KNOCKING involved. If you are not familiar with port knocking , i can give you a analogy .</description>
+    </item>
+    
+    <item>
+      <title>A Step-by-Step Walkthrough Solution to CTF LEVEL 5 INFOSECINSTITUTE (Practical Web HACKING)</title>
+      <link>https://thehackernotes.com/solution-to-ctf-level-5-infosecinstitutepractical-web-hacking/</link>
+      <pubDate>Thu, 24 Sep 2015 09:08:09 -0700</pubDate>
+      
+      <guid>https://thehackernotes.com/solution-to-ctf-level-5-infosecinstitutepractical-web-hacking/</guid>
+      <description>The Level can be accessed here.
+The Question says :It seems you have encountered a page which requires users to login before viewing. Do some magic without having to log in.
+The hint says you need to play with the headers , HTTP_REFERER
+On analysing the source code we see that the login button is disabled
+We remove the code disabled using the inspect tool in firefox and go to the login page which is available at the page login.</description>
+    </item>
+    
+  </channel>
+</rss>

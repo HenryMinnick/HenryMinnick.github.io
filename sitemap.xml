@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://thehackernotes.com/disclaimer/</loc>
+    <lastmod>2017-07-06T08:48:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/contact-us/</loc>
+    <lastmod>2017-07-06T08:48:05-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/about-us/</loc>
+    <lastmod>2017-07-06T08:47:58-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/privacy-policy/</loc>
+    <lastmod>2017-07-06T08:45:59-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/solution-to-ctf-level-9-infosecinstitutepractical-web-hacking/</loc>
+    <lastmod>2015-09-30T09:08:09-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/vulnhub-fartknocker-ctf-walkthrough/</loc>
+    <lastmod>2015-09-30T09:08:09-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/solution-to-ctf-level-5-infosecinstitutepractical-web-hacking/</loc>
+    <lastmod>2015-09-24T09:08:09-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/tags/pen-testing/</loc>
+    <lastmod>2015-09-30T09:08:09-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/post/</loc>
+    <lastmod>2015-09-30T09:08:09-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/tags/</loc>
+    <lastmod>2015-09-30T09:08:09-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehackernotes.com/</loc>
+    <lastmod>2017-07-06T08:48:12-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
